@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact name="SDVX_Konasute_MusicIndexer.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SDVX_Konasute_MusicIndexer_main_jar</output-path>
+    <root id="root">
+      <element id="archive" name="SDVX_Konasute_MusicIndexer.main.jar">
+        <element id="module-output" name="SDVX_Konasute_MusicIndexer.main" />
+      </element>
+      <element id="library" level="project" name="Gradle: org.jline:jline-terminal:3.13.3" />
+      <element id="library" level="project" name="Gradle: dev.reimer:progressbar-ktx:0.1.0" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0" />
+      <element id="library" level="project" name="Gradle: org.jline:jline:3.13.3" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0" />
+      <element id="library" level="project" name="Gradle: me.tongfei:progressbar:0.8.1" />
+      <element id="library" level="project" name="Gradle: org.jsoup:jsoup:1.17.2" />
+      <element id="library" level="project" name="Gradle: org.jetbrains:annotations:13.0" />
+      <element id="library" level="project" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.9.23" />
+      <element id="library" level="project" name="Gradle: org.jline:jline-terminal-jansi:3.13.3" />
+      <element id="library" level="project" name="Gradle: org.fusesource.jansi:jansi:1.18" />
+    </root>
+  </artifact>
+</component>

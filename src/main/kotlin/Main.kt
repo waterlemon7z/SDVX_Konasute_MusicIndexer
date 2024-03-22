@@ -1,30 +1,29 @@
+package com.waterlemon7z
 
-import console.ProgressBarLogger
+import com.waterlemon7z.console.Console
+import com.waterlemon7z.console.Menu
+import console.ProgressBar
 import entity.MusicEntity
-import fileIO.CsvWriter
+import fileIO.CsvOutput
 import webPaser.FetchWeb
 
-fun main(args: Array<String>) {
-    val fetchWeb = FetchWeb()
+fun main() {
 
+    Console.cls()
+    val sel = Menu.mainMenu()
+
+    val fetchWeb = FetchWeb(sel)
+    val progressBar = ProgressBar(fetchWeb, 10)
     val musicPageResult = mutableListOf<MusicEntity>()
-
-
-    val runnable = Runnable {
-        for (i in 1..fetchWeb.totalPageCount) {
-            musicPageResult.addAll(fetchWeb.getMusicPage(i))
-        }
+    for (i in 1..fetchWeb.totalPageCount) {
+        musicPageResult.addAll(fetchWeb.getMusicPage(i))
+        progressBar.updateProgress(i)
     }
-
-    val musicFetchThread = Thread(runnable)
-
-    musicFetchThread.start()
-
-    val progressBarLogger = ProgressBarLogger(fetchWeb, 50)
-    progressBarLogger.updateProgress(musicFetchThread)
-    musicFetchThread.join()
-
-    val csvWriter = CsvWriter("ustaIndex.csv")
+    val serviceName = when(sel){
+        1 -> "KonasuteJP"
+        else -> "KonasuteKR"
+    }
+    val csvWriter = CsvOutput("${serviceName}Index.csv")
     csvWriter.write(musicPageResult)
-    println("Finished")
+    println("Finished.")
 }

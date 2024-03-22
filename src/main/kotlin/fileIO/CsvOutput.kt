@@ -4,7 +4,7 @@ import entity.MusicEntity
 import java.io.BufferedWriter
 import java.io.FileWriter
 
-class CsvWriter(private val filePath: String) {
+class CsvOutput(private val filePath: String) {
     fun write(data: List<MusicEntity>) {
         try {
             val bufferedWriter = BufferedWriter(FileWriter(filePath))

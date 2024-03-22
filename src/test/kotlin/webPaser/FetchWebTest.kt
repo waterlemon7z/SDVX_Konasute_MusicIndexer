@@ -6,8 +6,9 @@ class FetchWebTest(
 ){
 
     @Test
-    fun getMusicPage() {
-        val fetchWeb: FetchWeb = FetchWeb()
-        fetchWeb.getMusicPage(3)
+    fun testCls()
+    {
+        println(System.getProperty("os.name"))
+        ProcessBuilder("clear").start()
     }
 }

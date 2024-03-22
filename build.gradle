@@ -1,0 +1,44 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+    id 'application'
+}
+
+group 'com.waterlemon7z'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    testImplementation "org.jetbrains.kotlin:kotlin-test"
+    implementation "org.jsoup:jsoup:1.17.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+application {
+    mainClass = "com.waterlemon7z.MainKt"
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.waterlemon7z.MainKt'
+    }
+    from {
+        configurations.compileClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+    duplicatesStrategy = 'exclude'
+}
