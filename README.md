@@ -3,7 +3,7 @@
 You can use csv file that I uploaded   
 이미 제가 생성 해 둔 csv 파일을 이용할 수 있습니다   
 KonasuteOOIndex.csv <= Download   
-blog : https://lime7z.com/3186
+blog : https://lemon7z.com/3186
 ## Requirements
 - Java 11
 - Network Connections (Parsing html from game web page)
